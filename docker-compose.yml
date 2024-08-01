@@ -1,0 +1,53 @@
+version: '3'
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+  admin-service:
+    build: ./admin-service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+  product-service:
+    build: ./product-service
+    ports:
+      - "3002:3002"
+    depends_on:
+      - postgres
+      - redis
+  order-service:
+    build: ./order-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - postgres
+      - redis
+  auction-service:
+    build: ./auction-service
+    ports:
+      - "3004:3004"
+    depends_on:
+      - postgres
+      - redis
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "3005:3005"
+    depends_on:
+      - postgres
+      - redis
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: userdb
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"

@@ -1,0 +1,21 @@
+{
+  "name": "auction-service",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node start",
+    "start:dev": "node start --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "redis": "^4.7.0",
+    "socket.io": "^4.7.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
